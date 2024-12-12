@@ -50,6 +50,8 @@ https://example.com/admin/login
 https://example.com/user/login
 ```
 
+5. Copy the URLs to a File "urls.txt"
+
 ### 2. URL Validation and Filtering
 
 You can use the additional functionality to validate a list of URLs and save the valid ones:
@@ -57,7 +59,7 @@ You can use the additional functionality to validate a list of URLs and save the
 1. Provide a list of URLs through standard input (e.g., by piping or redirecting from a file):
 
 ```bash
-echo -e "https://example.com\nhttps://invalid.url" | python3 probe.py
+cat urls.txt | python3 probe.py
 ```
 
 2. The script will:
