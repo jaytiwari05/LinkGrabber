@@ -125,9 +125,6 @@ https://example.com
 
 <img width="1218" alt="Screenshot 2024-12-13 at 2 36 29 AM" src="https://github.com/user-attachments/assets/1a4c1d09-0f49-45b7-b4c0-4a80842fb07e" />
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contributing
 
