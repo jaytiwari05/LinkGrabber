@@ -121,10 +121,7 @@ Contents of `filtered_url.txt`:
 https://example.com
 ```
 
-## Notes for Ethical Use
-- Always ensure you have permission to test the target domain.
-- Abide by the rules set in the `robots.txt` file of the target website.
-- Be cautious to avoid overwhelming the target server with excessive requests.
+<img width="1218" alt="Screenshot 2024-12-13 at 2 36 29 AM" src="https://github.com/user-attachments/assets/1a4c1d09-0f49-45b7-b4c0-4a80842fb07e" />
 
 ## License
 
@@ -140,4 +137,4 @@ Bug hunters and security enthusiasts are welcome to contribute. Feel free to for
 - [Requests Library Documentation](https://docs.python-requests.org/en/latest/)
 - [URL Parsing with `urljoin`](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urljoin)
 
-<img width="1218" alt="Screenshot 2024-12-13 at 2 36 29 AM" src="https://github.com/user-attachments/assets/1a4c1d09-0f49-45b7-b4c0-4a80842fb07e" />
+
