@@ -1,23 +1,23 @@
-# Web Crawler with Keyword Filtering
+# Link Grabber for Bug Hunters
 
-This Python script is a simple web crawler that recursively scrapes URLs from a given starting point and filters them based on a provided keyword. It uses the `requests` and `BeautifulSoup` libraries to fetch and parse HTML content and avoids visiting duplicate URLs.
+This Python script is a recursive web crawler designed specifically for bug hunters and penetration testers. It helps in identifying URLs of interest on a target website, filtered by a specified keyword. The script can be a valuable asset during the reconnaissance phase of a security assessment.
 
 ## Features
-- Recursively finds and prints URLs from a starting webpage.
-- Filters URLs based on a user-specified keyword.
-- Avoids revisiting already visited URLs to improve efficiency.
-- Handles invalid or unreachable URLs gracefully.
+- **Recursive Crawling**: Automatically traverses all linked pages on a target domain.
+- **Keyword Filtering**: Outputs only URLs containing a specific keyword, helping focus on areas of interest.
+- **Duplicate Avoidance**: Uses a `set` to ensure the same URL is not visited multiple times.
+- **Robust Error Handling**: Handles unreachable URLs gracefully.
 
 ## Prerequisites
 
-Before running the script, ensure you have the following installed:
+Ensure you have the following installed before running the script:
 
 - Python 3.x
 - Required Python libraries:
   - `requests`
   - `beautifulsoup4`
 
-You can install the required libraries using pip:
+Install the required libraries with:
 
 ```bash
 pip install requests beautifulsoup4
@@ -29,54 +29,62 @@ pip install requests beautifulsoup4
 2. Run the script using Python:
 
 ```bash
-python3 linkgrabber.py
+python3 linkGrabber.py
 ```
 
-3. Enter the target URL and the keyword to search for when prompted:
+3. Input the target URL and the keyword to filter URLs:
 
 ```
 Enter the URL you want to scrap: https://example.com
-Enter the keyword to search for in the URL provided: blog
+Enter the keyword to search for in the URL provided: login
 ```
 
-4. The script will recursively crawl the provided URL, find all links, and print links containing the keyword:
+4. The script will recursively scrape URLs and print only those containing the keyword:
 
 ```
-https://example.com/blog
-https://example.com/blog/post1
+https://example.com/login
+https://example.com/admin/login
+https://example.com/user/login
 ```
+
+## Use Cases for Bug Hunters
+
+### 1. **Gathering Reconnaissance Data**
+- Identify endpoints related to authentication, admin panels, or APIs.
+- Narrow down the scope by focusing only on URLs matching specific keywords like `login`, `admin`, or `api`.
+
+### 2. **Mapping the Attack Surface**
+- Understand the structure of the target application.
+- Discover hidden or less commonly accessed pages that could contain vulnerabilities.
+
+### 3. **Automating Recon**
+- Save time by automating the tedious task of manually finding links.
+- Easily integrate this script into your reconnaissance pipeline.
 
 ## Code Overview
 
 ### Modules Used
-- `requests`: To send HTTP GET requests.
-- `BeautifulSoup` (from `bs4`): To parse and extract HTML elements.
-- `urljoin` (from `urllib.parse`): To resolve relative URLs into absolute ones.
+- **`requests`**: Sends HTTP GET requests to the target site.
+- **`BeautifulSoup` (from `bs4`)**: Parses and extracts HTML elements from the page.
+- **`urljoin` (from `urllib.parse`)**: Resolves relative URLs to absolute ones.
 
-### Key Functions
+### Key Function
 
 #### `link_urls(url, keyword)`
-- Accepts a URL and a keyword as input.
 - Checks if the target URL is reachable.
-- Uses BeautifulSoup to extract all `<a>` tags and their `href` attributes.
-- Recursively follows links, filtering based on the provided keyword.
-- Avoids revisiting previously visited URLs using a `set`.
+- Extracts all `<a>` tags and retrieves their `href` attributes.
+- Recursively crawls linked pages while filtering URLs based on the keyword.
+- Avoids revisiting previously crawled URLs using a `set`.
 
 ## Example Output
 
-When crawling `https://example.com` for the keyword `blog`, the script will print:
+For the target `https://example.com` with the keyword `admin`, the script may output:
 
 ```
-https://example.com/blog
-https://example.com/blog/about
-https://example.com/blog/post
+https://example.com/admin
+https://example.com/admin/login
+https://example.com/admin/dashboard
 ```
-
-## Notes
-
-- Ensure the provided URL includes the protocol (`http` or `https`).
-- Use responsibly: avoid overloading websites with frequent or large-scale crawling.
-- The script does not currently handle JavaScript-rendered content or robots.txt restrictions.
 
 ## License
 
@@ -84,7 +92,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contributing
 
-Feel free to fork the repository and submit pull requests for improvements or bug fixes.
+Bug hunters and security enthusiasts are welcome to contribute. Feel free to fork the repository and submit pull requests for new features or bug fixes.
 
 ## References
 
