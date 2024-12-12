@@ -21,12 +21,12 @@ def url(out_file):
 			bad_urls.append(url)
 			continue
 		except requests.exceptions.ConnectionError:
-			bad_urls,append(url)
+			bad_urls.append(url)
 			continue
 
 
-	with open(out_file, 'w') ad file:
-		file.write('\n'.joind(good_urls))
+	with open(out_file, 'w') as file:
+		file.write('\n'.join(good_urls))
 
 	print(f"Saved URLS {out_file}")
 
