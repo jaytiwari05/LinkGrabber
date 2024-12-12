@@ -29,7 +29,7 @@ pip install requests beautifulsoup4
 2. Run the script using Python:
 
 ```bash
-python3 crawler.py
+python3 linkgrabber.py
 ```
 
 3. Enter the target URL and the keyword to search for when prompted:
